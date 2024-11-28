@@ -1,0 +1,5 @@
+modules.exports { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  // Recording...
+});
