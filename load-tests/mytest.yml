@@ -1,0 +1,26 @@
+config:
+  #target behöver skriva ut ip-numret istället för "localhoast:4000" här nedan
+  #då inte artillery klarar att konvertera detta.
+  target: http://127.0.0.1:4000 
+  phases:
+    - duration: 2
+      arrivalRate: 3
+      rampTo: 2
+      name: Warm up phase
+    - duration: 3
+      arrivalRate: 5
+      rampTo: 5
+      name: Ramp up load
+    - duration: 5
+      arrivalRate: 6
+      rampTo: 6
+      name: Spike phase
+      config:
+
+  engines:
+    playwright: {}
+  # Path to JavaScript file that defines Playwright test functions
+  processor: './flows2.cjs'
+scenarios:
+  - engine: playwright
+    testFunction: 'mytestFlow'
