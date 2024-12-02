@@ -12,8 +12,9 @@
     "test": "node makePrecompile.js && cucumber-js __temp --import tests/features/support --import tests/features/step-definitions  --format summary --fail-fast",
     "newman-test": "newman run postman-collections/mataffaren.collection.json",
     "make-steps": "node makeSteps.cjs",
-    "load-test-basic": "artillery run load-tests/basic.yml",
-    "load-test-hello-world": "artillery run load-tests/hello-world.yml"
+    "lt-basic": "artillery run load-tests/basic.yml",
+    "lt-hello-world": "artillery run load-tests/hello-world.yml",
+    "lt-mytest": "artillery run load-tests/mytest.yml"
   },
   "dependencies": {
     "concurrently": "^8.0.1",
